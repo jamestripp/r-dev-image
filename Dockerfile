@@ -12,4 +12,4 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
 
 RUN sed -i.bak "/^#.*deb-src.*universe$/s/^# //g" /etc/apt/sources.list
 RUN apt update
-RUN apt build-dep r-base
+RUN apt -y build-dep r-base
