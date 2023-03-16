@@ -13,5 +13,5 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
 RUN sed -i.bak "/^#.*deb-src.*universe$/s/^# //g" /etc/apt/sources.list
 RUN apt update
 RUN apt -y build-dep r-base
-RUN apt install r-base
+RUN apt -y install r-base
 RUN Rscript -e "install.packages(languageserver, repos='https://cran.rstudio.com')"
