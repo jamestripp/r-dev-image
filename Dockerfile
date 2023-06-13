@@ -15,3 +15,8 @@ RUN apt update
 RUN apt -y build-dep r-base
 RUN apt -y install r-base
 RUN Rscript -e "install.packages('languageserver', repos='https://cran.rstudio.com')"
+
+# Install rstudio server
+RUN apt-get install gdebi-core
+RUN https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.06.0-421-amd64.deb
+RUN gdebi -n rstudio-server-2023.06.0-421-amd64.deb
